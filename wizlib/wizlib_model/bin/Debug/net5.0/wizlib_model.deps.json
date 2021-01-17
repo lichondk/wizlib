@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "wizlib_model/1.0.0": {
+        "runtime": {
+          "wizlib_model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "wizlib_model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

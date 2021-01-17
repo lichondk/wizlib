@@ -1,0 +1,12 @@
+C:\Users\fuck\source\repos\wizlib\wizlib_model\bin\Debug\net5.0\wizlib_model.deps.json
+C:\Users\fuck\source\repos\wizlib\wizlib_model\bin\Debug\net5.0\wizlib_model.dll
+C:\Users\fuck\source\repos\wizlib\wizlib_model\bin\Debug\net5.0\ref\wizlib_model.dll
+C:\Users\fuck\source\repos\wizlib\wizlib_model\bin\Debug\net5.0\wizlib_model.pdb
+C:\Users\fuck\source\repos\wizlib\wizlib_model\obj\Debug\net5.0\wizlib_model.csprojAssemblyReference.cache
+C:\Users\fuck\source\repos\wizlib\wizlib_model\obj\Debug\net5.0\wizlib_model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fuck\source\repos\wizlib\wizlib_model\obj\Debug\net5.0\wizlib_model.AssemblyInfoInputs.cache
+C:\Users\fuck\source\repos\wizlib\wizlib_model\obj\Debug\net5.0\wizlib_model.AssemblyInfo.cs
+C:\Users\fuck\source\repos\wizlib\wizlib_model\obj\Debug\net5.0\wizlib_model.csproj.CoreCompileInputs.cache
+C:\Users\fuck\source\repos\wizlib\wizlib_model\obj\Debug\net5.0\wizlib_model.dll
+C:\Users\fuck\source\repos\wizlib\wizlib_model\obj\Debug\net5.0\ref\wizlib_model.dll
+C:\Users\fuck\source\repos\wizlib\wizlib_model\obj\Debug\net5.0\wizlib_model.pdb
