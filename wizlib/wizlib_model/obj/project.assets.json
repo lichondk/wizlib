@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fuck\\source\\repos\\wizlib\\wizlib_model\\wizlib_model.csproj",
+      "projectUniqueName": "C:\\Users\\fuck\\Documents\\GitHub\\wizlib\\wizlib\\wizlib_model\\wizlib_model.csproj",
       "projectName": "wizlib_model",
-      "projectPath": "C:\\Users\\fuck\\source\\repos\\wizlib\\wizlib_model\\wizlib_model.csproj",
+      "projectPath": "C:\\Users\\fuck\\Documents\\GitHub\\wizlib\\wizlib\\wizlib_model\\wizlib_model.csproj",
       "packagesPath": "C:\\Users\\fuck\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fuck\\source\\repos\\wizlib\\wizlib_model\\obj\\",
+      "outputPath": "C:\\Users\\fuck\\Documents\\GitHub\\wizlib\\wizlib\\wizlib_model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fuck\\AppData\\Roaming\\NuGet\\NuGet.Config",

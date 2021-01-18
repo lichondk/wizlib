@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dxzmVYqMFOlwHn3PhISxg1WpWjSL68Di32s6gpdwZ4zDZplyeq42lkOXo7aoUm0Irf1pinuK3IpAIwoiDQI95A==",
+  "dgSpecHash": "Tc2IH4NWUws7/mt1wgAamr/sLdHRDvdyw/VcEMBBeZ36YTPlPwMn6wdNXpr43LJI6TRHEfFz4wbEHpUrupIABA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fuck\\source\\repos\\wizlib\\wizlib\\wizlib.csproj",
+  "projectFilePath": "C:\\Users\\fuck\\Documents\\GitHub\\wizlib\\wizlib\\wizlib\\wizlib.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fuck\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\fuck\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
