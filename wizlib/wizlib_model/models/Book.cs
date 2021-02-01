@@ -28,6 +28,6 @@ namespace wizlib_model.models
         public int Publisher_Id { get; set; }
         public Publisher Publisher { get; set; }
         public ICollection<BookAuthor> bookAuthors { get; set; }
-
+        public Category category { get; set; }
     }
 }

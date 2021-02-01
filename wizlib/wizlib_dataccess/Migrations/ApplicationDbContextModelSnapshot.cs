@@ -55,6 +55,9 @@ namespace wizlib_dataccess.Migrations
                     b.Property<int>("BookDetail_Id")
                         .HasColumnType("int");
 
+                    b.Property<int?>("Category_Id")
+                        .HasColumnType("int");
+
                     b.Property<string>("ISBN")
                         .IsRequired()
                         .HasMaxLength(15)
@@ -74,6 +77,8 @@ namespace wizlib_dataccess.Migrations
 
                     b.HasIndex("BookDetail_Id")
                         .IsUnique();
+
+                    b.HasIndex("Category_Id");
 
                     b.HasIndex("Publisher_Id");
 
@@ -113,7 +118,22 @@ namespace wizlib_dataccess.Migrations
 
                     b.HasKey("BookDetail_Id");
 
-                    b.ToTable("BookDetail");
+                    b.ToTable("bookDetails");
+                });
+
+            modelBuilder.Entity("wizlib_model.models.Category", b =>
+                {
+                    b.Property<int>("Category_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Category_Id");
+
+                    b.ToTable("categories");
                 });
 
             modelBuilder.Entity("wizlib_model.models.Genre", b =>
@@ -163,6 +183,10 @@ namespace wizlib_dataccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("wizlib_model.models.Category", "category")
+                        .WithMany()
+                        .HasForeignKey("Category_Id");
+
                     b.HasOne("wizlib_model.models.Publisher", "Publisher")
                         .WithMany("Books")
                         .HasForeignKey("Publisher_Id")
@@ -170,6 +194,8 @@ namespace wizlib_dataccess.Migrations
                         .IsRequired();
 
                     b.Navigation("BookDetail");
+
+                    b.Navigation("category");
 
                     b.Navigation("Publisher");
                 });

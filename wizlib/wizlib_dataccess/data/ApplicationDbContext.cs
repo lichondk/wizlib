@@ -21,6 +21,9 @@ namespace wizlib_dataccess.data
         public DbSet<Author> Authors { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<BookAuthor> BookAuthors { get; set; }
+        public DbSet<BookDetail> bookDetails { get; set; }
+        public DbSet<Category> categories { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
