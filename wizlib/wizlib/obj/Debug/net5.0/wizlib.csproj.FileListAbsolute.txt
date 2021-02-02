@@ -229,3 +229,10 @@ C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib\obj\Debug\net5.0\Razor\Views
 C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib\obj\Debug\net5.0\Razor\Views\Publisher\Index.cshtml.g.cs
 C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib\obj\Debug\net5.0\Razor\Views\Publisher\Upsert.cshtml.g.cs
 C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib\obj\Debug\net5.0\Razor\Views\Book\Index.cshtml.g.cs
+C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib\obj\Debug\net5.0\wizlib.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib\obj\Debug\net5.0\Razor\Views\Book\Upsert.cshtml.g.cs
+C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib\obj\Debug\net5.0\Razor\Views\Book\Details.cshtml.g.cs
