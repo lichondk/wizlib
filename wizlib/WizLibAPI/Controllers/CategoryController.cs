@@ -9,6 +9,8 @@ using wizlib_model.models;
 
 namespace WizLibAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class CategoryController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,9 +22,21 @@ namespace WizLibAPI.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Category>>> GetProduct()
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
             return await _context.categories.ToListAsync();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Category>> GetCategory(string id)
+        {
+            var category = await _context.categories.FindAsync(id);
+            if(category != null)
+            {
+                return category;
+            }
+
+            return NotFound();
         }
     }
 }
