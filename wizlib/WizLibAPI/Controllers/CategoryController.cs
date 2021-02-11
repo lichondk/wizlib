@@ -38,5 +38,37 @@ namespace WizLibAPI.Controllers
 
             return NotFound();
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCategory(string id, Category category)
+        {
+            if (id != category.Category_Id.ToString())
+            {
+                return BadRequest();
+            }
+            _context.categories.Update(category);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CategoryExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return NoContent();
+        }
+
+        [HttpPost]
+        private bool CategoryExists(string id)
+        {
+            return _context.categories.Any(e => e.Category_Id.ToString() == id);
+        }
     }
 }
