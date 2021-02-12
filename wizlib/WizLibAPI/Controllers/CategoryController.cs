@@ -66,6 +66,29 @@ namespace WizLibAPI.Controllers
         }
 
         [HttpPost]
+        public async Task<ActionResult> PostCategory([FromBody] IList<Category> categories)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            await _context.categories.AddRangeAsync(categories);
+            _context.SaveChanges();
+            return Ok(categories);
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteCategory(string id)
+        {
+            Category cat = await _context.categories.FindAsync(id);
+            if (cat != null)
+            {
+                _context.categories.Remove(cat);
+                return Ok();
+            }
+            return NotFound();
+        }
+
         private bool CategoryExists(string id)
         {
             return _context.categories.Any(e => e.Category_Id.ToString() == id);
