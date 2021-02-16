@@ -21,3 +21,4 @@ C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib_model\obj\Debug\net5.0\wizli
 C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib_model\obj\Debug\net5.0\wizlib_model.dll
 C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib_model\obj\Debug\net5.0\ref\wizlib_model.dll
 C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib_model\obj\Debug\net5.0\wizlib_model.pdb
+C:\Users\fuck\Documents\GitHub\wizlib\wizlib\wizlib_model\obj\Debug\net5.0\wizlib_model.csprojAssemblyReference.cache
