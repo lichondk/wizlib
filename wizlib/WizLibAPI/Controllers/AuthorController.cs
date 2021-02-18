@@ -36,5 +36,62 @@ namespace WizLibAPI.Controllers
 
             return NotFound();
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutAuthor(string id, Author author)
+        {
+            if (id != author.Author_Id.ToString())
+            {
+                return BadRequest();
+            }
+            _context.Authors.Update(author);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AuthorExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return NoContent();
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult> PostAuthor([FromBody] IList<Author> authors)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            await _context.Authors.AddRangeAsync(authors);
+            _context.SaveChanges();
+            return Ok(authors);
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteAuthor(int id)
+        {
+            Author author = await _context.Authors.FindAsync(id);
+            if (author != null)
+            {
+                _context.Authors.Remove(author);
+                _context.SaveChanges();
+                return Ok();
+            }
+            return NotFound();
+        }
+
+        private bool AuthorExists(string id)
+        {
+            return _context.Authors.Any(e => e.Author_Id.ToString() == id);
+        }
     }
 }
