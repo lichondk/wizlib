@@ -106,7 +106,7 @@ namespace wizlib.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Details(BookViewModel obj)
-        {
+        {   
             if (obj.Book.BookDetail.BookDetail_Id == 0)
             {
                 _db.bookDetails.Add(obj.Book.BookDetail);

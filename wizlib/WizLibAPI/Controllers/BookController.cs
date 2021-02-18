@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using wizlib_dataccess.data;
 using wizlib_model.models;
+using wizlib_model.ViewModels;
 
 namespace WizLibAPI.Controllers
 {
@@ -20,9 +22,15 @@ namespace WizLibAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Book>>> GetBook()
+        public async Task<ActionResult<string>> GetBook()
         {
-            return await _context.Books.ToListAsync();
+            List<Book> books = await _context.Books.Include(u=>u.BookDetail).ToListAsync();
+            string json = JsonConvert.SerializeObject(books, new JsonSerializerSettings
+            {
+                Formatting = Formatting.Indented,
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
         }
 
         [HttpGet("{id}")]
@@ -31,9 +39,9 @@ namespace WizLibAPI.Controllers
             var book = await _context.Books.FindAsync(id);
             if (book != null)
             {
+                book.BookDetail = await _context.bookDetails.FirstOrDefaultAsync(u => u.BookDetail_Id == book.BookDetail_Id);
                 return book;
             }
-
             return NotFound();
         }
 

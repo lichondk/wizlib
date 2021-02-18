@@ -19,8 +19,6 @@ namespace wizlib_model.models
         public string ISBN { get; set; }
         [Required]
         public double Price { get; set; }
-        [NotMapped]
-        public string PriceRange { get; set; }
         [ForeignKey("BookDetail")]
         public int? BookDetail_Id { get; set; }
         public BookDetail BookDetail { get; set; }
