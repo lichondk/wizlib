@@ -11,48 +11,48 @@ namespace WizLibAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CategoryController : Controller
+    public class PublisherController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public CategoryController(ApplicationDbContext context)
+        public PublisherController(ApplicationDbContext context)
         {
             _context = context;
         }
-
+        
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
+        public async Task<ActionResult<IEnumerable<Publisher>>> GetPublisher()
         {
-            return await _context.categories.ToListAsync();
+            return await _context.Publishers.ToListAsync();
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Category>> GetCategory(int id)
+        public async Task<ActionResult<Publisher>> GetPublisher(int id)
         {
-            var category = await _context.categories.FindAsync(id);
-            if(category != null)
+            var publisher = await _context.Publishers.FindAsync(id);
+            if (publisher != null)
             {
-                return category;
+                return publisher;
             }
 
             return NotFound();
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategory(string id, Category category)
+        public async Task<IActionResult> PutPublisher(string id, Publisher publisher)
         {
-            if (id != category.Category_Id.ToString())
+            if (id != publisher.Publisher_Id.ToString())
             {
                 return BadRequest();
             }
-            _context.categories.Update(category);
+            _context.Publishers.Update(publisher);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CategoryExists(id))
+                if (!PublisherExists(id))
                 {
                     return NotFound();
                 }
@@ -65,33 +65,33 @@ namespace WizLibAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> PostCategory([FromBody] IList<Category> categories)
+        public async Task<ActionResult> PostPublisher([FromBody] IList<Publisher> publisher)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            await _context.categories.AddRangeAsync(categories);
+            await _context.Publishers.AddRangeAsync(publisher);
             _context.SaveChanges();
-            return Ok(categories);
+            return Ok(publisher);
         }
 
         [HttpDelete]
-        public async Task<ActionResult> DeleteCategory(int id)
+        public async Task<ActionResult> DeletePublisher(int id)
         {
-            Category cat = await _context.categories.FindAsync(id);
-            if (cat != null)
+            Publisher publisher = await _context.Publishers.FindAsync(id);
+            if (publisher != null)
             {
-                _context.categories.Remove(cat);
+                _context.Publishers.Remove(publisher);
                 _context.SaveChanges();
                 return Ok();
             }
             return NotFound();
         }
 
-        private bool CategoryExists(string id)
+        private bool PublisherExists(string id)
         {
-            return _context.categories.Any(e => e.Category_Id.ToString() == id);
+            return _context.Publishers.Any(e => e.Publisher_Id.ToString() == id);
         }
     }
 }
