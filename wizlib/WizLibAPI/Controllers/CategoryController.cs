@@ -28,7 +28,7 @@ namespace WizLibAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Category>> GetCategory(string id)
+        public async Task<ActionResult<Category>> GetCategory(int id)
         {
             var category = await _context.categories.FindAsync(id);
             if(category != null)
@@ -78,12 +78,13 @@ namespace WizLibAPI.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult> DeleteCategory(string id)
+        public async Task<ActionResult> DeleteCategory(int id)
         {
             Category cat = await _context.categories.FindAsync(id);
             if (cat != null)
             {
                 _context.categories.Remove(cat);
+                _context.SaveChanges();
                 return Ok();
             }
             return NotFound();
